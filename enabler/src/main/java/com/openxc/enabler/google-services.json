@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "179884017942",
+    "firebase_url": "https://openxc-45d12.firebaseio.com",
+    "project_id": "openxc-45d12",
+    "storage_bucket": "openxc-45d12.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:179884017942:android:c44c948c1b610e14",
+        "android_client_info": {
+          "package_name": "com.openxc.enabler"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "179884017942-k6bllepjfvdcfjc825ranrjp5rctlsjo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBj2KAG9cQlKE4ujj_9nG8ET1nFFv-mdc4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

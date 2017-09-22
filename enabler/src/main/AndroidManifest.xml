@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.openxcplatform.enabler">
+
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+  <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"/>
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <uses-permission android:name="android.permission.WAKE_LOCK"/>
+  <uses-permission android:name="android.permission.BLUETOOTH"/>
+  <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-feature android:name="android.hardware.usb.host" android:required="true"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+  <application android:allowBackup="true" android:icon="@drawable/openxc_icon" android:label="@string/app_name" android:theme="@style/MyCustomTheme">
+      <service android:name="com.openxc.enabler.preferences.PreferenceManagerService"/>
+
+      <activity android:launchMode="singleTask" android:name="com.openxc.enabler.OpenXcEnablerActivity">
+          <intent-filter>
+              <action android:name="android.intent.action.MAIN"/>
+              <action android:name="com.example.prabeesh.fcmwithappserver_TARGET_NOTIFICATION"/>
+              <category android:name="android.intent.category.LAUNCHER"/>
+          </intent-filter>
+      </activity>
+
+      <activity android:name="com.openxc.enabler.SettingsActivity"/>
+      <activity android:name="com.openxc.enabler.CanMessageDetailActivity"/>
+      <activity android:name="com.openxc.enabler.viewTraces"
+          android:label="@string/recorded_traces">
+          <intent-filter>
+              <action android:name="com.openxc.enabler.viewTraces" />
+              <category android:name="android.intent.category.DEFAULT" />
+          </intent-filter>
+      </activity>
+
+      <activity android:name="com.openxc.interfaces.usb.UsbDeviceAttachmentActivity">
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"/>
+            </intent-filter>
+
+            <meta-data android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" android:resource="@xml/device_filter"/>
+      </activity>
+
+      <receiver android:name="com.openxc.enabler.BootupReceiver">
+          <intent-filter>
+              <action android:name="android.intent.action.BOOT_COMPLETED"/>
+          </intent-filter>
+      </receiver>
+
+      <receiver android:name="com.openxc.enabler.BluetoothReceiver">
+          <intent-filter>
+              <action android:name="android.bluetooth.device.action.ACL_CONNECTED"/>
+          </intent-filter>
+          <intent-filter>
+              <action android:name="android.bluetooth.device.action.ACL_DISCONNECTED"/>
+          </intent-filter>
+      </receiver>
+
+      <meta-data android:name="com.bugsnag.token" android:value="@string/bugsnag_token"/>
+      <service android:name="com.openxc.enabler.MyFirebaseMessagingService">
+          <intent-filter>
+              <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+          </intent-filter>
+      </service>
+      <service android:name="com.openxc.enabler.MyFirebaseInstanceIDService">
+          <intent-filter>
+              <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+          </intent-filter>
+      </service>
+  </application>
+
+</manifest>

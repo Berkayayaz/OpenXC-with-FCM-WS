@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <item name="cream" type="color">#F8B195</item>
+    <item name="pink" type="color">#F67280</item>
+    <item name="lightPurple" type="color">#C06C84</item>
+    <item name="purple" type="color">#6C5B7B</item>
+    <item name="navy" type="color">#355C7D</item>
+    <item name="white" type="color">#FFF</item>
+    <item name="gray" type="color">#696969</item>
+    <item name="darkGray" type="color">#555555</item>
+
+    <integer-array name="androidcolors">
+        <item>@color/cream</item>
+        <item>@color/pink</item>
+        <item>@color/lightPurple</item>
+        <item>@color/purple</item>
+        <item>@color/navy</item>
+        <item>@color/white</item>
+        <item>@color/gray</item>
+        <item>@color/darkGray</item>
+    </integer-array>
+
+</resources>
